@@ -95,6 +95,164 @@ export default {
       heroes: [
         {
           response: "success",
+          id: "107",
+          name: "Black Widow",
+          powerstats: {
+            intelligence: "75",
+            strength: "13",
+            speed: "33",
+            durability: "30",
+            power: "36",
+            combat: "100"
+          },
+          biography: {
+            "full-name": "Natasha Romanoff",
+            "alter-egos": "No alter egos found.",
+            aliases: [
+              "Yelena Belova",
+              "Natasha Romanoff",
+              "Natasha",
+              "Tasha",
+              "Madame Natasha",
+              "Nancy Rushman",
+              "Laura Matthers",
+              "Nadine Roman",
+              '"Oktober"',
+              "Black Pearl",
+              "Ebon Flame"
+            ],
+            "place-of-birth": "-",
+            "first-appearance": "Tales of Suspense #52",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Female",
+            race: "Human",
+            height: ["5'7", "170 cm"],
+            weight: ["131 lb", "59 kg"],
+            "eye-color": "Green",
+            "hair-color": "Auburn"
+          },
+          work: {
+            occupation: "Adventurer, Intelligence agent, former ballerina",
+            base: "Mobile"
+          },
+          connections: {
+            "group-affiliation":
+              'Secret Avengers; formerly Thunderbolts (as Yelena Belova), Nick Fury, Mighty Avengers, S.H.I.E.L.D., Avengers, Champions of Los Angeles, Lady Liberators, KGB, "Marvel Knights", partner of Daredevil, Hawkeye, Boris Turgenov, Logan',
+            relatives:
+              "Unnamed parents (presumed deceased); Alexi Shostakov (Red Guardian, estranged husband); Vindiktor (alleged brother, deceased)"
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/248.jpg"
+          }
+        },
+        {
+          response: "success",
+          id: "106",
+          name: "Black Panther",
+          powerstats: {
+            intelligence: "88",
+            strength: "16",
+            speed: "30",
+            durability: "60",
+            power: "41",
+            combat: "100"
+          },
+          biography: {
+            "full-name": "T'Challa",
+            "alter-egos": "No alter egos found.",
+            aliases: [
+              "Mr. Okonkwo",
+              "The Man Without Fear",
+              "Luke Charles",
+              "Black Leopard",
+              "the Client",
+              "Coal Tiger",
+              "has impersonated Daredevil and others on occasion"
+            ],
+            "place-of-birth": "Wakanda, Africa",
+            "first-appearance": "Fantastic Four Vol. 1 #52 (1966)",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["6'0", "183 cm"],
+            weight: ["200 lb", "90 kg"],
+            "eye-color": "Brown",
+            "hair-color": "Black"
+          },
+          work: {
+            occupation:
+              "King and Chieftain of Wakanda, scientist; former school teacher",
+            base: "Wakanda, Mobile"
+          },
+          connections: {
+            "group-affiliation":
+              "Formerly Fantastic Four, Secret Avengers, Avengers, Pendragons, Queen's Vengeance, former Fantastic Force financier",
+            relatives:
+              "Bashenga (paternal ancestor, deceased), Azzuri the Wise (paternal grandfather, deceased), Nanali (paternal grandmother, deceased), Chanda (paternal grandfather, presumably deceased), T\ufffdChaka (father, deceased), S'Yan (uncle, deceased), N\ufffdYami (mother, deceased), Ramonda (stepmother), Hunter (adopted brother), Jakarra (half-brother), Shuri (sister), Ororo Munroe (wife), Joshua Itobo, Ishanta, Zuni, M'Koni, T'Shan (cousins), Wheeler (cousin by marriage, deceased), Billy Wheeler (1st cousin once removed)"
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/247.jpg"
+          }
+        },
+        {
+          response: "success",
+          id: "226",
+          name: "Doctor Strange",
+          powerstats: {
+            intelligence: "100",
+            strength: "10",
+            speed: "12",
+            durability: "84",
+            power: "100",
+            combat: "60"
+          },
+          biography: {
+            "full-name": "Stephen Strange",
+            "alter-egos": "No alter egos found.",
+            aliases: [
+              "Sorcerer Supreme",
+              "Master of the Mystic Arts",
+              "Stephen Sanders",
+              "Captain Universe",
+              "Vincent Stevens"
+            ],
+            "place-of-birth": "Philadelphia, Pennsylvania",
+            "first-appearance": "Strange Tales #110 (July, 1963)",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["6'2", "188 cm"],
+            weight: ["180 lb", "81 kg"],
+            "eye-color": "Grey",
+            "hair-color": "Black"
+          },
+          work: {
+            occupation: "Sorcerer Supreme, retired neurosurgeon",
+            base: "-"
+          },
+          connections: {
+            "group-affiliation":
+              "Defenders, underground Avengers; formerly the Order, Midnight Sons; former disciple of the Ancient One",
+            relatives:
+              "Eugene (father, deceased), Beverly (mother, deceased), Victor (Khiron, brother, apparently deceased), Donna (sister, deceased), Clea (wife, estranged), Umar (mother-in-law), Orini (father-in-law), Dormammu (uncle-in-law)"
+          },
+          image: {
+            url: "https://www.superherodb.com/pictures2/portraits/10/100/55.jpg"
+          }
+        },
+        {
+          response: "success",
           id: "620",
           name: "Spider-Man",
           powerstats: {
@@ -332,7 +490,8 @@ export default {
 
 .tiles {
   border: 1px solid black;
-  margin: 0 15px 30px 15px;
+  //margin: 0 15px 30px 15px;
+  margin: 0 15px 650px 15px;
   /* flex-grow: 1; */
   flex: 0 0 220px;
   padding: 0;
