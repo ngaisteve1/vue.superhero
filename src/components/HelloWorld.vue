@@ -1,76 +1,82 @@
 <template>
-  <div class="container-fluid">
-    <div class="menu row" v-bind:key="hero.id" v-for="hero in heroes">
-      <div
-        class="menu-category list-group col-lg-3 col-md-4 col-sm-6 col-xs-12"
-      >
-        <h1 class="title">
-          {{ hero.name }}
-        </h1>
-        <div class="team">
-          <div class="team-img">
-            <img :src="hero.image.url" alt="Team Image" />
-            <div class="team-social">
-              <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
-              <a class="social-fb" href=""><i class="fab fa-facebook-f"></i></a>
-              <a class="social-li" href=""
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a class="social-in" href=""><i class="fab fa-instagram"></i></a>
-              <a class="social-yt" href=""><i class="fab fa-youtube"></i></a>
+  <div class="container">
+    <div class="tiles" v-bind:key="hero.id" v-for="hero in heroes">
+      <div class="menu row">
+        <div
+          class="menu-category list-group col-lg-3 col-md-4 col-sm-6 col-xs-12"
+        >
+          <h1 class="title">
+            {{ hero.name }}
+          </h1>
+          <div class="team">
+            <div class="team-img">
+              <img :src="hero.image.url" alt="Team Image" />
+              <div class="team-social">
+                <a class="social-tw" href=""><i class="fab fa-twitter"></i></a>
+                <a class="social-fb" href=""
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a class="social-li" href=""
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a class="social-in" href=""
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a class="social-yt" href=""><i class="fab fa-youtube"></i></a>
+              </div>
             </div>
-          </div>
-          <div class="team-content">
-            <h2>{{ hero.biography["full-name"] }}</h2>
-            <h3>{{ hero.work.occupation }}</h3>
-            <!-- <p>Some text goes here that describes about team member</p> -->
-            <div class="team-skill">
-              <div class="skill-name">
-                <p>intelligence</p>
-                <p>{{ hero.powerstats.intelligence }}%</p>
-              </div>
-              <div class="progress">
-                <div
-                  class="progress-bar"
-                  :style="{ width: `${hero.powerstats.intelligence}%` }"
-                ></div>
-              </div>
-              <div class="skill-name">
-                <p>strength</p>
-                <p>{{ hero.powerstats.strength }}%</p>
-              </div>
-              <div class="progress">
-                <div
-                  :class="`progress-bar w-${hero.powerstats.strength}`"
-                ></div>
-              </div>
-              <div class="skill-name">
-                <p>speed</p>
-                <p>{{ hero.powerstats.speed }}%</p>
-              </div>
-              <div class="progress">
-                <div class="progress-bar w-80"></div>
-              </div>
-              <div class="skill-name">
-                <p>durability</p>
-                <p>{{ hero.powerstats.durability }}%</p>
-              </div>
-              <div class="progress">
-                <div class="progress-bar w-80"></div>
-              </div>
-              <div class="skill-name">
-                <p>power</p>
-                <p>{{ hero.powerstats.power }}%</p>
-              </div>
-              <div class="progress">
-                <div class="progress-bar w-80"></div>
-              </div>
-              <div class="skill-name">
-                <p>combat</p>
-                <p>{{ hero.powerstats.combat }}%</p>
-              </div>
-              <div class="progress">
-                <div class="progress-bar w-70"></div>
+            <div class="team-content">
+              <h2>{{ hero.biography["full-name"] }}</h2>
+              <h3>{{ hero.work.occupation }}</h3>
+              <!-- <p>Some text goes here that describes about team member</p> -->
+              <div class="team-skill">
+                <div class="skill-name">
+                  <p>intelligence</p>
+                  <p>{{ hero.powerstats.intelligence }}%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.intelligence}%` }"
+                  ></div>
+                </div>
+                <div class="skill-name">
+                  <p>strength</p>
+                  <p>{{ hero.powerstats.strength }}%</p>
+                </div>
+                <div class="progress">
+                  <div
+                    :class="`progress-bar w-${hero.powerstats.strength}`"
+                  ></div>
+                </div>
+                <div class="skill-name">
+                  <p>speed</p>
+                  <p>{{ hero.powerstats.speed }}%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar w-80"></div>
+                </div>
+                <div class="skill-name">
+                  <p>durability</p>
+                  <p>{{ hero.powerstats.durability }}%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar w-80"></div>
+                </div>
+                <div class="skill-name">
+                  <p>power</p>
+                  <p>{{ hero.powerstats.power }}%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar w-80"></div>
+                </div>
+                <div class="skill-name">
+                  <p>combat</p>
+                  <p>{{ hero.powerstats.combat }}%</p>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar w-70"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -87,6 +93,66 @@ export default {
   data() {
     return {
       heroes: [
+        {
+          response: "success",
+          id: "620",
+          name: "Spider-Man",
+          powerstats: {
+            intelligence: "90",
+            strength: "55",
+            speed: "67",
+            durability: "75",
+            power: "74",
+            combat: "85"
+          },
+          biography: {
+            "full-name": "Peter Parker",
+            "alter-egos": "No alter egos found.",
+            aliases: [
+              "Spiderman",
+              "Bag-Man",
+              "Black Marvel",
+              "Captain Universe",
+              "Dusk",
+              "Green Hood",
+              "Hornet",
+              "Mad Dog 336",
+              "Peter Palmer",
+              "Prodigy",
+              "Ricochet",
+              "Scarlet Spider",
+              "Spider-Boy",
+              "Spider-Hulk",
+              "Spider-Morphosis"
+            ],
+            "place-of-birth": "New York, New York",
+            "first-appearance": "Amazing Fantasy #15",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["5'10", "178 cm"],
+            weight: ["165 lb", "74 kg"],
+            "eye-color": "Hazel",
+            "hair-color": "Brown"
+          },
+          work: {
+            occupation: "Freelance photographer, teacher",
+            base: "New York, New York"
+          },
+          connections: {
+            "group-affiliation":
+              "Member of the Avengers, formerly member of Outlaws, alternate Fantastic Four",
+            relatives:
+              "Richard Parker (father, deceased), Mary Parker(mother, deceased), Benjamin Parker (uncle, deceased), May Parker (aunt), Mary Jane Watson-Parker (wife), May Parker (daughter, allegedly deceased)"
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/133.jpg"
+          }
+        },
         {
           response: "success",
           id: "332",
@@ -139,6 +205,57 @@ export default {
           image: {
             url: "https://www.superherodb.com/pictures2/portraits/10/100/83.jpg"
           }
+        },
+        {
+          response: "success",
+          id: "346",
+          name: "Iron Man",
+          powerstats: {
+            intelligence: "100",
+            strength: "85",
+            speed: "58",
+            durability: "85",
+            power: "100",
+            combat: "64"
+          },
+          biography: {
+            "full-name": "Tony Stark",
+            "alter-egos": "No alter egos found.",
+            aliases: [
+              "Iron Knight",
+              "Hogan Potts",
+              "Spare Parts Man",
+              "Cobalt Man II",
+              "Crimson Dynamo",
+              "Ironman"
+            ],
+            "place-of-birth": "Long Island, New York",
+            "first-appearance": "Tales of Suspence #39 (March, 1963)",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["6'6", "198 cm"],
+            weight: ["425 lb", "191 kg"],
+            "eye-color": "Blue",
+            "hair-color": "Black"
+          },
+          work: {
+            occupation:
+              "Inventor, Industrialist; former United States Secretary of Defense",
+            base: "Seattle, Washington"
+          },
+          connections: {
+            "group-affiliation":
+              "Avengers, Illuminati, Stark Resilient; formerly S.H.I.E.L.D., leader of Stark Enterprises, the Pro-Registration Superhero Unit, New Avengers, Mighty Avengers, Hellfire Club, Force Works, Avengers West Coast, United States Department of Defense.",
+            relatives:
+              "Howard Anthony Stark (father, deceased), Maria Stark (mother, deceased), Morgan Stark (cousin), Isaac Stark (ancestor)"
+          },
+          image: {
+            url: "https://www.superherodb.com/pictures2/portraits/10/100/85.jpg"
+          }
         }
       ]
     };
@@ -189,20 +306,38 @@ export default {
   box-sizing: border-box;
 }
 
-.container {
-  position: relative;
-  width: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+// .container {
+//   position: relative;
+//   width: 100%;
+//   font-family: Arial, Helvetica, sans-serif;
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+// }
 
 .container > div.column {
   display: flex;
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
+}
+
+.container {
+  // border: 1px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 2000px;
+}
+
+.tiles {
+  border: 1px solid black;
+  margin: 0 15px 30px 15px;
+  /* flex-grow: 1; */
+  flex: 0 0 220px;
+  padding: 0;
+  height: 220px;
+  /* min-width: 220px; */
 }
 
 @media screen and (min-width: 800px) {
@@ -323,6 +458,7 @@ h1.title a {
 
 .team .team-content {
   padding: 20px;
+  min-height: 400px;
 }
 
 .team .team-content h2 {
