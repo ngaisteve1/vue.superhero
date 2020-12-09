@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <!-- <div id="logo"><img src="./assets/AvengersLogoBg.jpg" /></div> -->
     <HelloWorld msg="" />
   </div>
 </template>
@@ -23,5 +24,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+body {
+  background-image: url("./assets/AvengersLogoBg.jpg");
+  background-repeat: repeat;
 }
 </style>

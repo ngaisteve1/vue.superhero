@@ -26,8 +26,8 @@
               </div>
             </div>
             <div class="team-content">
-              <h2>{{ hero.biography["full-name"] }}</h2>
-              <h3>{{ hero.work.occupation }}</h3>
+              <h2 class="team-name">{{ hero.biography["full-name"] }}</h2>
+              <!-- <h3>{{ hero.work.occupation }}</h3> -->
               <!-- <p>Some text goes here that describes about team member</p> -->
               <div class="team-skill">
                 <div class="skill-name">
@@ -46,7 +46,8 @@
                 </div>
                 <div class="progress">
                   <div
-                    :class="`progress-bar w-${hero.powerstats.strength}`"
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.strength}%` }"
                   ></div>
                 </div>
                 <div class="skill-name">
@@ -54,28 +55,40 @@
                   <p>{{ hero.powerstats.speed }}%</p>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar w-80"></div>
+                  <div
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.speed}%` }"
+                  ></div>
                 </div>
                 <div class="skill-name">
                   <p>durability</p>
                   <p>{{ hero.powerstats.durability }}%</p>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar w-80"></div>
+                  <div
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.durability}%` }"
+                  ></div>
                 </div>
                 <div class="skill-name">
                   <p>power</p>
                   <p>{{ hero.powerstats.power }}%</p>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar w-80"></div>
+                  <div
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.power}%` }"
+                  ></div>
                 </div>
                 <div class="skill-name">
                   <p>combat</p>
                   <p>{{ hero.powerstats.combat }}%</p>
                 </div>
                 <div class="progress">
-                  <div class="progress-bar w-70"></div>
+                  <div
+                    class="progress-bar"
+                    :style="{ width: `${hero.powerstats.combat}%` }"
+                  ></div>
                 </div>
               </div>
             </div>
@@ -93,6 +106,99 @@ export default {
   data() {
     return {
       heroes: [
+        {
+          response: "success",
+          id: "149",
+          name: "Captain America",
+          powerstats: {
+            intelligence: "69",
+            strength: "19",
+            speed: "38",
+            durability: "55",
+            power: "60",
+            combat: "100"
+          },
+          biography: {
+            "full-name": "Steve Rogers",
+            "alter-egos": "No alter egos found.",
+            aliases: ["Nomad", "The Captain"],
+            "place-of-birth": "Manhattan, New York City, New York",
+            "first-appearance": "Captain America Comics #1 (March 1941)",
+            publisher: "Marvel Comics",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["6'2", "188 cm"],
+            weight: ["240 lb", "108 kg"],
+            "eye-color": "blue",
+            "hair-color": "blond"
+          },
+          work: {
+            occupation:
+              "Adventurer, federal official, intelligence operative; former soldier, Hydra agent, liaison between S.H.I.E.L.D. and the Avengers, police officer, teacher, sparring partner.",
+            base: "New York City"
+          },
+          connections: {
+            "group-affiliation":
+              "Secret Avengers (Black OPS Unit Formerly,The Avengers, Secret Avengers (Civil War), New Avengers, formerly The Invaders, Secret Defenders The Redeemers; formerly partner of Bucky, Golden Girl, Rick Jones, Falcon, Demolition-Man and Nomad (Jack Monroe)",
+            relatives:
+              "Joseph (father, deceased), Sara (mother, deceased), Ian Zola (Nomad) (adopted son)"
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/274.jpg"
+          }
+        },
+        {
+          response: "success",
+          id: "659",
+          name: "Thor",
+          powerstats: {
+            intelligence: "69",
+            strength: "100",
+            speed: "83",
+            durability: "100",
+            power: "100",
+            combat: "100"
+          },
+          biography: {
+            "full-name": "Thor Odinson",
+            "alter-egos": "Rune King Thor",
+            aliases: [
+              "Donald Blake",
+              "Sigurd Jarlson",
+              "Jake Olsen",
+              "Donar the Mighty"
+            ],
+            "place-of-birth": "Asgard",
+            "first-appearance": "Journey into Mystery #83 (August, 1962)",
+            publisher: "Rune King Thor",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Asgardian",
+            height: ["6'6", "198 cm"],
+            weight: ["640 lb", "288 kg"],
+            "eye-color": "Blue",
+            "hair-color": "Blond"
+          },
+          work: {
+            occupation: "King of Asgard; formerly EMS Technician; Physician",
+            base: "New York, New York"
+          },
+          connections: {
+            "group-affiliation": "Avengers",
+            relatives:
+              "Odin (father), Gaea (mother), Frigga (step-mother), Loki (step-brother), Vidar (half-brother), Buri (paternal great-grandfather), Bolthorn (maternal great grandfather), Bor (grandfather), Bestla (grandmother), Vili (uncle), Ve (uncle), Sigyn (former sister-in-law), Hela (alleged niece), Jormungand (alleged nephew), Fernis Wolf (alleged nephew)"
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/140.jpg"
+          }
+        },
         {
           response: "success",
           id: "107",
@@ -414,6 +520,149 @@ export default {
           image: {
             url: "https://www.superherodb.com/pictures2/portraits/10/100/85.jpg"
           }
+        },
+        {
+          response: "success",
+          id: "313",
+          name: "Hawkeye",
+          powerstats: {
+            intelligence: "56",
+            strength: "12",
+            speed: "21",
+            durability: "10",
+            power: "29",
+            combat: "80"
+          },
+          biography: {
+            "full-name": "Clint Barton",
+            "alter-egos": "Goliath, Ronin",
+            aliases: [
+              "Ronin",
+              "Goliath",
+              "Golden Archer",
+              "the Marksman",
+              "Father Time",
+              "Longbow"
+            ],
+            "place-of-birth": "Waverly, Iowa",
+            "first-appearance": "Tales of Suspense #57 (September, 1964)",
+            publisher: "Goliath",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Human",
+            height: ["6'3", "191 cm"],
+            weight: ["230 lb", "104 kg"],
+            "eye-color": "Blue",
+            "hair-color": "Blond"
+          },
+          work: { occupation: "Adventurer", base: "-" },
+          connections: {
+            "group-affiliation":
+              "Avengers, Thunderbolts, Avengers West Coast, Great Lakes Avengers, Shadows, Chain Gang, former partner of the Black Widow",
+            relatives:
+              "Harold Barton (father, deceased), Edith Barton (mother, deceased), Bernard Barton (brother, deceased), Barbara Morse (wife, deceased)"
+          },
+          image: {
+            url: "https://www.superherodb.com/pictures2/portraits/10/100/73.jpg"
+          }
+        },
+        {
+          response: "success",
+          id: "697",
+          name: "Vision",
+          powerstats: {
+            intelligence: "100",
+            strength: "72",
+            speed: "54",
+            durability: "95",
+            power: "100",
+            combat: "70"
+          },
+          biography: {
+            "full-name": "Vision",
+            "alter-egos": "Anti-Vision, Vision II",
+            aliases: ["Victor Shade"],
+            "place-of-birth": "-",
+            "first-appearance": "Avengers Vol.1 #57, Young Avengers # 4",
+            publisher: "Anti-Vision",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Male",
+            race: "Android",
+            height: ["6'3", "191 cm"],
+            weight: ["300 lb", "135 kg"],
+            "eye-color": "Gold",
+            "hair-color": "No Hair"
+          },
+          work: {
+            occupation: "-",
+            base:
+              "Mobile. Formerly Avengers Mansion, New York City and Avengers Compound"
+          },
+          connections: {
+            "group-affiliation":
+              "Young Avengers, formerly; Avengers, West Coast Avengers, Defenders, Queen's Vengeance",
+            relatives:
+              'Wanda Maximoff (Scarlet Witch, ex-wife), Thomas Shepherd (Speed, son), William Kaplan (Wiccan, son), Ultron ("father"), Henry Pym (Ant-Man, "grandfather"), Pietro Maximoff (Quicksilver, ex-brother-in-law), Erik Magnus Lensher (Magneto, ex-father-in-law), Jocasta (fellow creation, "sister"), Simon Williams (Wonder Man, "brother"), Victor Mancha (fellow creation, half brother), Alkhema (fellow creation, "stepmother")'
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/532.jpg"
+          }
+        },
+        {
+          response: "success",
+          id: "157",
+          name: "Captain Marvel",
+          powerstats: {
+            intelligence: "84",
+            strength: "88",
+            speed: "71",
+            durability: "95",
+            power: "100",
+            combat: "90"
+          },
+          biography: {
+            "full-name": "Carol Danvers",
+            "alter-egos": "Binary, Warbird",
+            aliases: [
+              "Ace",
+              "Binary",
+              "Lady Marvel",
+              "Warbird",
+              "others used during her espionage career"
+            ],
+            "place-of-birth": "Boston, Massachusetts",
+            "first-appearance": "Ms. Marvel #1",
+            publisher: "Binary",
+            alignment: "good"
+          },
+          appearance: {
+            gender: "Female",
+            race: "Human-Kree",
+            height: ["5'11", "180 cm"],
+            weight: ["165 lb", "74 kg"],
+            "eye-color": "Blue",
+            "hair-color": "Blond"
+          },
+          work: {
+            occupation:
+              "Former National Aeronautics and Space Administration security Chief, former magazine editor, former freelance writer, former military intelligence officer.",
+            base: "Avengers Mansion"
+          },
+          connections: {
+            "group-affiliation":
+              "currently Avengers, former companion to the X-Men (as Carol Danvers), former member of the Starjammers (as Binary), Former Avenger (as Ms. Marvel)",
+            relatives:
+              'Marie Danvers (mother), Joseph Danvers, Sr. (father), Joseph Danvers, Jr. (brother), Steve Danvers (brother, deceased), Marcus Immortus (Danvers) ("son", deceased)'
+          },
+          image: {
+            url:
+              "https://www.superherodb.com/pictures2/portraits/10/100/103.jpg"
+          }
         }
       ]
     };
@@ -455,6 +704,12 @@ export default {
   }
 }
 
+@media all and (max-width: 499px) {
+  #logo {
+    display: none;
+  }
+}
+
 /**********************************/
 /********** Common CSS ************/
 /**********************************/
@@ -486,16 +741,19 @@ export default {
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 2000px;
+  justify-content: center;
 }
 
 .tiles {
+  background-color: #dddddd;
   border: 1px solid black;
   //margin: 0 15px 30px 15px;
-  margin: 0 15px 650px 15px;
+  margin: 0 15px 750px 15px;
   /* flex-grow: 1; */
-  flex: 0 0 220px;
+  // flex: 0 0 220px;
   padding: 0;
-  height: 220px;
+  height: 100px;
+
   /* min-width: 220px; */
 }
 
@@ -515,7 +773,7 @@ h1.title {
   font-size: 25px;
   line-height: 35px;
   text-align: center;
-  margin: 30px auto;
+  margin: 10px auto;
 }
 
 h1.title a {
@@ -526,6 +784,7 @@ h1.title a {
 /************ Team CSS ************/
 /**********************************/
 .team {
+  background-color: #dddddd;
   position: relative;
   margin: 0 auto;
   width: 100%;
@@ -533,6 +792,10 @@ h1.title a {
   max-width: 300px;
   margin-bottom: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.team-name {
+  min-height: 60px;
 }
 
 .team .team-img {
@@ -617,7 +880,7 @@ h1.title a {
 
 .team .team-content {
   padding: 20px;
-  min-height: 400px;
+  min-height: 300px;
 }
 
 .team .team-content h2 {
