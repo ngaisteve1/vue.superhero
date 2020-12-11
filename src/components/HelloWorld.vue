@@ -35,9 +35,12 @@
                   <p>{{ hero.powerstats.intelligence }}%</p>
                 </div>
                 <div class="progress">
-                  <div
+                  <!-- <div
                     class="progress-bar"
                     :style="{ width: `${hero.powerstats.intelligence}%` }"
+                  ></div> -->
+                  <div
+                    :class="`progress-bar w-${hero.powerstats.intelligence}`"
                   ></div>
                 </div>
                 <div class="skill-name">
@@ -45,9 +48,12 @@
                   <p>{{ hero.powerstats.strength }}%</p>
                 </div>
                 <div class="progress">
-                  <div
+                  <!-- <div
                     class="progress-bar"
                     :style="{ width: `${hero.powerstats.strength}%` }"
+                  ></div> -->
+                  <div
+                    :class="`progress-bar w-${hero.powerstats.strength}`"
                   ></div>
                 </div>
                 <div class="skill-name">
@@ -55,19 +61,23 @@
                   <p>{{ hero.powerstats.speed }}%</p>
                 </div>
                 <div class="progress">
-                  <div
+                  <!-- <div
                     class="progress-bar"
                     :style="{ width: `${hero.powerstats.speed}%` }"
-                  ></div>
+                  ></div> -->
+                  <div :class="`progress-bar w-${hero.powerstats.speed}`"></div>
                 </div>
                 <div class="skill-name">
                   <p>durability</p>
                   <p>{{ hero.powerstats.durability }}%</p>
                 </div>
                 <div class="progress">
-                  <div
+                  <!-- <div
                     class="progress-bar"
                     :style="{ width: `${hero.powerstats.durability}%` }"
+                  ></div> -->
+                  <div
+                    :class="`progress-bar w-${hero.powerstats.durability}`"
                   ></div>
                 </div>
                 <div class="skill-name">
@@ -75,19 +85,23 @@
                   <p>{{ hero.powerstats.power }}%</p>
                 </div>
                 <div class="progress">
-                  <div
+                  <!-- <div
                     class="progress-bar"
                     :style="{ width: `${hero.powerstats.power}%` }"
-                  ></div>
+                  ></div> -->
+                  <div :class="`progress-bar w-${hero.powerstats.power}`"></div>
                 </div>
                 <div class="skill-name">
                   <p>combat</p>
                   <p>{{ hero.powerstats.combat }}%</p>
                 </div>
                 <div class="progress">
-                  <div
-                    class="progress-bar"
+                  <!-- <div
+                    class="progress-bar "
                     :style="{ width: `${hero.powerstats.combat}%` }"
+                  ></div> -->
+                  <div
+                    :class="`progress-bar w-${hero.powerstats.combat}`"
                   ></div>
                 </div>
               </div>
@@ -949,21 +963,46 @@ h1.title a {
   z-index: 1;
 }
 
-// @for $i from 0 through 100 {
-//   .progress-bar.w-#{$i} {
-//     width: $i%;
+@for $i from 0 through 100 {
+  .team:hover .progress-bar.w-#{$i} {
+    width: $i * 1%;
+  }
+}
+
+// .team:hover .progress-bar {
+//   //background: #dee2e3;
+//   border-radius: 99px;
+//   width: 200px;
+//   height: 5px;
+//   position: relative;
+//   overflow: hidden;
+
+//   &::before {
+//     border-radius: 99px;
+//     position: absolute;
+//     height: 5px;
+//     background: #f5c70f;
+//     content: "";
+//     width: 0;
+//     transition: width 0.2s;
 //   }
 // }
 
-.team:hover .progress-bar.w-70 {
-  width: 70%;
-}
+// @for $i from 0 through 100 {
+//   .w-#{$i}::before {
+//     width: $i * 1%;
+//   }
+// }
 
-.team:hover .progress-bar.w-80 {
-  width: 80%;
-}
+// .team:hover .progress-bar.w-70 {
+//   width: 70%;
+// }
 
-.team:hover .progress-bar.w-90 {
-  width: 90%;
-}
+// .team:hover .progress-bar.w-80 {
+//   width: 80%;
+// }
+
+// .team:hover .progress-bar.w-90 {
+//   width: 90%;
+// }
 </style>
